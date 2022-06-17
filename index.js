@@ -30,8 +30,8 @@ const run = async () => {
         })
 
         app.get('/project/:id', async (req, res) => {
-            const _id = req.params.id
-            const query = { id: ObjectId(_id) }
+            const id = req.params.id
+            const query = { _id: ObjectId(id) }
             const project = await MyProjectsCollection.findOne(query)
             res.send(project)
         })
